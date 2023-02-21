@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
+import java.util.stream.Stream;
 
 public class DZ2 {
     public static void main(String[] args) {
@@ -8,6 +9,7 @@ public class DZ2 {
         list1.add(50);
         list1.add(2);
         list1.add(40);
+
         Predicate<Integer> predicate = new Predicate<Integer>() {
             @Override
             public boolean test(Integer integer) {
@@ -16,5 +18,12 @@ public class DZ2 {
         };
         list1.removeIf(predicate);
         System.out.println(list1);
+
+
+        list1.stream().filter(predicate);
+
+
+
     }
+
 }
